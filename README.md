@@ -265,7 +265,16 @@ Please note, even with Hybrid git deployments the uploads directory is still a s
 
 If you disable the git integration for your site, then the directory and file structure will be returned to GridPane normal using the latest files from the current release.
 
+# Note
 
+Currently we configure a site for git deployments and check the repo, but the git repo is not deployed on the site until users trigger a deploy.
+
+For Hybrid git sites especially this causes a needless update to the directory structure only to change it again on the deploy.
+
+We understand this is superfluous and intend to combine this into a single action
+- convert site and run first deploy 
+
+This will mean for hybrid git connected sites there will be no confusing intermediary directory structure that exists before first deploy.
 
 
 
