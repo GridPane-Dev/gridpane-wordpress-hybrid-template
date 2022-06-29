@@ -4,8 +4,10 @@ This repo is an example of a repo configured for Hybrid deployment
 
 This means that only the contents of the following directories are going to be deployed:
 ```
+.gpconfig
 wp-content/plugins
 wp-content/themes
+wp-content/mu-plugins
 ```
 
 You can add your custom plugins and themes to these directories and when deployed only these plugins and themes will be updated on your site.
