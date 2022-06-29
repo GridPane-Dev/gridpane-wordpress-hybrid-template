@@ -1,4 +1,4 @@
-# gridpane-wordpress-template-all-plugins
+# gridpane-wordpress-hybrid-template
 
 This repo is an example of a repo configured for Hybrid deployment
 
