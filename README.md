@@ -267,17 +267,29 @@ If you disable the git integration for your site, then the directory and file st
 
 # Note
 
-Currently we configure a site for git deployments and check the repo, but the git repo is not deployed on the site until users trigger a deploy.
+Directory structures - intermediary state
+- On enable we currently check the repo and then configure a sites directories for git deployments, but do not carry out an immediate deployment.
+- First deployment occurs on the push of the deploy button or trigger of the push to deploy webhook.
+- This means after enable and before deploy there is an intermediary directory state where the structure is that of a git deployed site, but the files are not from the git repo.
+- We understand this is superfluous and intend to combine this into a single action, however at beta stage it allows us to test and check each stage separately.
 
-For Hybrid git sites especially this causes a temporary dir structure that soon changes on first deploy.
+Backups
+- Restores are full, if you restore a backup on a hybrid site it will restore all db and files
+- This means that files from the hybrid repo may be overwritten
+- We intend to fix this by triggering a redeploy of the current release directory after every backup restore
+- For now, users will need to trigger a redeploy after a backup restore manually
+- The files in the repo should be managed by version control, so we intend these to take priority over those in any backup
+- If a user wants to restore a backup of these files, then they can use version control
 
-We understand this is superfluous and intend to combine this into a single action, however at beta stage it allows us to test and check each stage separately.
-- convert site and run first deploy 
+Cloning/Clone Over/Staging - source is git hybrid
+- These should all function as normal
+- The Hybrid Deploy file structure does not differ in any way that should affect these
 
-This will mean for hybrid git connected sites there will be no confusing intermediary directory structure that exists before first deploy.
-
-
-
+Clone Over/Staging - destination is git hybrid
+- Same as with backups
+- A clone over/staging push to the site will overwrite/remove the hybrid repo files
+- We intend to fix this by automating a redeploy after a push/clone over
+- For now, users will need to trigger this manually
 
 
 
