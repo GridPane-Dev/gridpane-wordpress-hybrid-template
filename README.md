@@ -80,20 +80,20 @@ Will be deployed to the releases directory, and then rsynced to the `htdocs/wp-c
 
 Any MU Plugins included in:
 ```
-wp-content/mu-plugin
+wp-content/mu-plugins
 ```
 
-Will be deployed to the releases directory, and then rsynced to the `htdocs/wp-content/mu-plugin` directory with `delete` flag to overwrite any existing matching mu plugin.
+Will be deployed to the releases directory, and then rsynced to the `htdocs/wp-content/mu-plugins` directory with `delete` flag to overwrite any existing matching mu plugin.
 
 
 ## Themes
 
 Any themes included in:
 ```
-wp-content/mu-plugin
+wp-content/mu-plugins
 ```
 
-Will be deployed to the releases directory, and then rsynced to the `htdocs/wp-content/mu-plugin` directory with `delete` flag to overwrite any existing matching mu plugin.
+Will be deployed to the releases directory, and then rsynced to the `htdocs/wp-content/mu-plugisn` directory with `delete` flag to overwrite any existing matching mu plugin.
 
 
 ## Directory Structure Changes
